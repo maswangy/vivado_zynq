@@ -25,45 +25,13 @@ port (
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    led               : out std_logic;
-    reset_rtl : in STD_LOGIC  );
+    FIXED_IO_ps_srstb : inout STD_LOGIC);
 end top;
 
 architecture STRUCTURE of top is
-
---  component system is
---  port (
---    DDR_cas_n : inout STD_LOGIC;
---    DDR_cke : inout STD_LOGIC;
---    DDR_ck_n : inout STD_LOGIC;
---    DDR_ck_p : inout STD_LOGIC;
---    DDR_cs_n : inout STD_LOGIC;
---    DDR_reset_n : inout STD_LOGIC;
---    DDR_odt : inout STD_LOGIC;
---    DDR_ras_n : inout STD_LOGIC;
---    DDR_we_n : inout STD_LOGIC;
---    DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
---    DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
---    DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
---    DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
---    DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
---    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
---    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
---    FIXED_IO_ddr_vrn : inout STD_LOGIC;
---    FIXED_IO_ddr_vrp : inout STD_LOGIC;
---    FIXED_IO_ps_srstb : inout STD_LOGIC;
---    FIXED_IO_ps_clk : inout STD_LOGIC;
---    FIXED_IO_ps_porb : inout STD_LOGIC;
---    gpio_io_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
---    reset_rtl : in STD_LOGIC  );
---  end component system;
-  
-  signal gpio_io_o : std_logic_vector(31 downto 0);
   
 begin
 
-    led <= gpio_io_o(0);
 
 
 system_i: entity work.system
@@ -88,8 +56,6 @@ system_i: entity work.system
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      gpio_io_o => gpio_io_o,
-      reset_rtl => reset_rtl);
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb);
       
 end STRUCTURE;
