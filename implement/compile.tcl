@@ -3,7 +3,7 @@ set outputDir ./results
 file mkdir $outputDir
 open_project proj.xpr
 
-synth_ip [get_ips *]
+#synth_ip [get_ips *]
 
 synth_design -top top
 write_checkpoint -force $outputDir/post_synth.dcp
@@ -11,8 +11,8 @@ write_checkpoint -force $outputDir/post_synth.dcp
 #report_utilization -file $outputDir/post_synth_util.rpt
 #reportCriticalPaths post_synth_critpath_report.csv
 
-## add ila logic analyzer.
-source add_ila.tcl
+# add ila logic analyzer.
+#source add_ila.tcl
 
 opt_design
 #reportCriticalPaths post_opt_critpath_report.csv
@@ -43,7 +43,9 @@ write_bitstream -verbose -force $outputDir/top.bit
 
 close_project
 
-write_cfgmem -force -format MCS -size 256 -interface SPIx4 -loadbit "up 0x0 ./results/top.bit" -verbose ./results/top.mcs
+#write_cfgmem -force -format MCS -size 256 -interface SPIx4 -loadbit "up 0x0 ./results/top.bit" -verbose ./results/top.mcs
+write_cfgmem -disablebitswap -force -format BIN -size 256 -interface SMAPx32 -loadbit "up 0x0 ./results/top.bit" -verbose ./results/top.bit.bin
+
 
 
 
