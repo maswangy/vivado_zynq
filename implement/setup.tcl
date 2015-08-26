@@ -11,7 +11,7 @@ tclapp::install ultrafast -quiet
 file delete -force ./ip
 file mkdir ./ip
 
-#read_ip ../source/ip/sine_rom/sine_rom.xci
+read_ip ../source/spi_slave/spi_slave_mem/spi_slave_mem.xci
 upgrade_ip -quiet  [get_ips *]
 generate_target {all} [get_ips *]
 
@@ -19,6 +19,7 @@ source ../source/system.tcl
 generate_target {synthesis implementation} [get_files ./proj.srcs/sources_1/bd/system/system.bd]
 
 # Read in the hdl source.
+read_vhdl [glob ../source/spi_slave/spi_slave.vhd]
 read_vhdl [glob ../source/top.vhd]
 
 #read_xdc ../source/top.xdc
