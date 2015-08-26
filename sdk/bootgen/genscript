@@ -1,6 +1,6 @@
-dtc -I dts -O dtb -o devicetree.dtb zynq-zed.dts
+#dtc -I dts -O dtb -o devicetree.dtb zynq-zed.dts
 
-mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz
+#mkimage -A arm -T ramdisk -C gzip -d arm_ramdisk.image.gz uramdisk.image.gz
 
 rm -f boot.bin
 bootgen -image linux.bif -o i boot.bin

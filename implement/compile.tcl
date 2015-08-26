@@ -25,6 +25,8 @@ report_drc -file $outputDir/post_imp_drc.rpt
 report_io -file $outputDir/post_imp_io.rpt
 xilinx::ultrafast::report_io_reg -verbose -file $outputDir/io_regs.rpt
 
+write_hwdef -force  -file /home/pedro/proj/vivado_zynq/sdk/top.hdf
+
 write_bitstream -verbose -force $outputDir/top.bit
 
 close_project
