@@ -167,7 +167,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_quad_spi_0, and set properties
   set axi_quad_spi_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_0 ]
-  set_property -dict [ list CONFIG.C_NUM_TRANSFER_BITS {8} CONFIG.C_USE_STARTUP {0}  ] $axi_quad_spi_0
+  set_property -dict [ list CONFIG.C_NUM_TRANSFER_BITS {16} CONFIG.C_USE_STARTUP {0}  ] $axi_quad_spi_0
 
   # Create instance: proc_sys_reset_0, and set properties
   set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]

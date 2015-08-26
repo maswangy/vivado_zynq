@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date             : Wed Aug 26 15:59:08 2015
+| Date             : Wed Aug 26 16:49:04 2015
 | Host             : pedro-ubuntu-crucial running 64-bit Ubuntu 14.04.3 LTS
 | Command          : report_power -file ./results/post_route_power.rpt
 | Design           : top
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.009 |        3 |       --- |             --- |
-| Slice Logic              |     0.004 |     4436 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     1580 |     17600 |            8.98 |
-|   Register               |    <0.001 |     2023 |     35200 |            5.75 |
-|   LUT as Distributed RAM |    <0.001 |       32 |      6000 |            0.53 |
+| Slice Logic              |     0.004 |     4559 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     1610 |     17600 |            9.15 |
+|   Register               |    <0.001 |     2100 |     35200 |            5.97 |
+|   LUT as Distributed RAM |    <0.001 |       40 |      6000 |            0.67 |
 |   CARRY4                 |    <0.001 |       45 |      4400 |            1.02 |
 |   F7/F8 Muxes            |    <0.001 |        9 |     17600 |            0.05 |
 |   LUT as Shift Register  |    <0.001 |       75 |      6000 |            1.25 |
 |   Others                 |     0.000 |      281 |       --- |             --- |
-| Signals                  |     0.005 |     3231 |       --- |             --- |
+| Signals                  |     0.005 |     3311 |       --- |             --- |
 | Block RAM                |     0.001 |        1 |        60 |            1.67 |
 | PS7                      |     1.400 |        1 |       --- |             --- |
 | Static Power             |     0.131 |          |           |                 |
@@ -180,7 +180,7 @@ Table of Contents
 |             valid.cstr                                       |     0.001 |
 |               ramloop[0].ram.r                               |     0.001 |
 |                 prim_noinit.ram                              |     0.001 |
-|     axi_interconnect_0                                       |     0.010 |
+|     axi_interconnect_0                                       |     0.009 |
 |       m01_couplers                                           |     0.004 |
 |         auto_pc                                              |     0.004 |
 |           inst                                               |     0.004 |
@@ -193,7 +193,7 @@ Table of Contents
 |               RD.r_channel_0                                 |     0.001 |
 |                 rd_data_fifo_0                               |    <0.001 |
 |                 transaction_fifo_0                           |    <0.001 |
-|               SI_REG                                         |     0.002 |
+|               SI_REG                                         |     0.001 |
 |                 ar_pipe                                      |    <0.001 |
 |                 aw_pipe                                      |    <0.001 |
 |                 b_pipe                                       |    <0.001 |
@@ -263,7 +263,8 @@ Table of Contents
 |                     gntv_or_sync_fifo.mem                    |    <0.001 |
 |                       gdm.dm                                 |    <0.001 |
 |                         RAM_reg_0_15_0_5                     |    <0.001 |
-|                         RAM_reg_0_15_6_7                     |    <0.001 |
+|                         RAM_reg_0_15_12_15                   |    <0.001 |
+|                         RAM_reg_0_15_6_11                    |    <0.001 |
 |                     rstblk                                   |    <0.001 |
 |           FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I                   |    <0.001 |
 |           FIFO_EXISTS.TX_FIFO_II                             |    <0.001 |
@@ -286,7 +287,8 @@ Table of Contents
 |                     gntv_or_sync_fifo.mem                    |    <0.001 |
 |                       gdm.dm                                 |    <0.001 |
 |                         RAM_reg_0_15_0_5                     |    <0.001 |
-|                         RAM_reg_0_15_6_7                     |    <0.001 |
+|                         RAM_reg_0_15_12_15                   |    <0.001 |
+|                         RAM_reg_0_15_6_11                    |    <0.001 |
 |                     rstblk                                   |    <0.001 |
 |           INTERRUPT_CONTROL_I                                |    <0.001 |
 |           LOGIC_FOR_MD_0_GEN.SPI_MODULE_I                    |    <0.001 |
