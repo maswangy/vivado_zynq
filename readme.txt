@@ -39,4 +39,7 @@ git clone https://github.com/hdlguy/vivado_zynq.git
 
 === Test with Linux on Zynq
 
+    sudo cat top.bit.bin > /dev/xdevcfg
+
+
 

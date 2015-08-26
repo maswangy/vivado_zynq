@@ -25,17 +25,19 @@ port (
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC);
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    spi_miso : in  std_logic;
+    spi_mosi : out std_logic;
+    spi_sck  : out std_logic;
+    spi_ss   : out std_logic);
 end top;
 
-architecture STRUCTURE of top is
+architecture STRUCTURE of top is 
   
 begin
 
-
-
 system_i: entity work.system
-     port map (
+port map (
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,
@@ -56,6 +58,10 @@ system_i: entity work.system
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb);
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      spi_miso => spi_miso,
+      spi_mosi => spi_mosi,
+      spi_sck => spi_sck,
+      spi_ss(0) => spi_ss);
       
 end STRUCTURE;
