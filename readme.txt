@@ -85,5 +85,21 @@ top.bit.bin  - the fpga bit file formatted so that Zynq linux can load
 
     sudo cat top.bit.bin > /dev/xdevcfg
 
+=== Working with the FPGA design.
+
+The setup.tcl script creates a complete ready-to-open Vivado project file called proj.xpr.  You can open that
+file from the linux command line like this:
+
+    vivado proj.xpr
+
+You can compile the design inside the Vivado GUI and browse the results in the RTL schematic editor.
+
+You can also open the IP Integrator block diagram part of the design.  If you make any changes 
+you can save them back into the source folder this way.
+
+    write_bd_tcl -force ../source/system.tcl
+
+
+
 
 
