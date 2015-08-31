@@ -27,15 +27,59 @@ optionally called from compile.tcl.
 == How to Use
 
 === Check out the files
-git clone https://github.com/hdlguy/vivado_zynq.git
+
+    git clone https://github.com/hdlguy/vivado_zynq.git
+
 
 === Get to the Vivado TCL prompt
 
+==== Linux
+In linux you need to source a script that sets up the environment. Like this:
+
+    source /opt/Xilinx/Vivado/2015.2/settings64.sh
+
+Then change directory to your working directory, like
+
+    cd ~/proj/vivado_zynq/implement
+
+Then start Vivado in TCL mode.
+
+    vivado -mode tcl
+
+==== Windows
+
+From the start button, open Vivado TCL Shell
+
+In the TCL Shell change director to the working directory
+
+    cd {C:\path_to_implement_director}
+
+Note: use the {} brackets to avoid having to edit all the '\' to '/'.
+
+
 === Run setup.tcl
 
-=== Run complile.tcl
+    source setup.tcl
+
+
+=== Run compile.tcl
+
+    source compile.tcl
+
 
 === Review results
+
+In the implement/results folder you will find these files.
+
+ila1.ltx  - when adding an ILA core this file is what is used to import signal names into the ILA user interface.
+io_regs.rpt  - report of which I/O pins are registered in the IOB.
+post_imp_io.rpt  - the regular I/O report
+post_route.dcp  - post place and route checkpoint. 
+post_route_timing_summary.rpt  - this shows worst timing paths for each constraint
+post_synth.dcp  - post synthesis ch3eckpoint.
+top.bit  - the fpga bit file ready to load from download cable.
+top.bit.bin  - the fpga bit file formatted so that Zynq linux can load
+
 
 === Test with Linux on Zynq
 
