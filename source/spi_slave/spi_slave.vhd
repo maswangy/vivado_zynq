@@ -1,8 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity spi_slave is
 Port ( 
@@ -16,14 +14,14 @@ end spi_slave;
 
 architecture Behavioral of spi_slave is
 
-    COMPONENT spi_slave_mem
-    PORT (
-        a : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-        d : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        clk : IN STD_LOGIC;
-        we : IN STD_LOGIC;
-        spo : OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
-    END COMPONENT;
+    --COMPONENT spi_slave_mem
+    --PORT (
+        --a : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+        --d : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        --clk : IN STD_LOGIC;
+        --we : IN STD_LOGIC;
+        --spo : OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+    --END COMPONENT;
     --ATTRIBUTE SYN_BLACK_BOX : BOOLEAN;
     --ATTRIBUTE SYN_BLACK_BOX OF spi_slave_mem : COMPONENT IS TRUE;
     
